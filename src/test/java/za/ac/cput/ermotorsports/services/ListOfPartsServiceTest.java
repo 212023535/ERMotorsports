@@ -38,7 +38,7 @@ public class ListOfPartsServiceTest  extends AbstractTestNGSpringContextTests
         service.save(listOfParts);
 
         //ID should be available
-        id = listOfParts.getId();
+        id = listOfParts.getList_id();
 
         Assert.assertNotNull(id);
     }
@@ -63,7 +63,7 @@ public class ListOfPartsServiceTest  extends AbstractTestNGSpringContextTests
         ListOfParts listOfParts = service.findById(id);
 
         //Change it
-        ListOfParts newListOfParts = new ListOfParts.Build(listOfParts.getId()).copy(listOfParts).partID(1234567888L).build();
+        ListOfParts newListOfParts = new ListOfParts.Build(listOfParts.getList_id()).copy(listOfParts).partID(1234567888L).build();
 
         //Save it
         service.update(newListOfParts);

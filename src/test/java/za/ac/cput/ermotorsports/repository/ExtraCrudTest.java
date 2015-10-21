@@ -37,4 +37,25 @@ public class ExtraCrudTest extends AbstractTestNGSpringContextTests
         repository.save(extra);
         Assert.assertNotNull(extra.getId());
     }
+
+    @Test(dependsOnMethods = {"read"})
+    public void update() throws Exception
+    {
+        Extra extra = (Extra)this.repository.findOne(this.id);
+        Extra newExtra = new Extra.Build(extra.getBrand()).copy(extra).units("32").build();
+        this.repository.save(newExtra);
+
+        Extra updatedExtra = (Extra)this.repository.findOne(this.id);
+        Assert.assertEquals("32", updatedExtra.getUnits());
+    }
+
+    @Test(dependsOnMethods = {"update"})
+    public void delete() throws Exception
+    {
+        Extra extra = (Extra)this.repository.findOne(this.id);
+        this.repository.delete(extra);
+
+        Extra deletedExtra = (Extra)this.repository.findOne(this.id);
+        Assert.assertNull(deletedExtra);
+    }
 }

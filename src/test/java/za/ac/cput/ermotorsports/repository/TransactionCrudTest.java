@@ -32,4 +32,32 @@ public class TransactionCrudTest extends AbstractTestNGSpringContextTests
         Assert.assertNotNull(transaction);
         //Assert.assertEquals("R10000",transaction.getAmount());
     }
+
+    @Test(dependsOnMethods = {"create"})
+    public void read() throws Exception
+    {
+        Transaction trans = (Transaction)this.repository.findOne(this.id);
+        Assert.assertNotNull(trans);
+    }
+
+    @Test(dependsOnMethods = {"read"})
+    public void update() throws Exception
+    {
+        Transaction trans = (Transaction)this.repository.findOne(this.id);
+        Transaction newTrans = new Transaction.Build(trans.getAmount()).copy(trans).amount("R12000").build();
+        this.repository.save(newTrans);
+
+        Transaction updatedTrans = (Transaction)this.repository.findOne(this.id);
+        Assert.assertEquals("R12000", updatedTrans.getAmount());
+    }
+
+    @Test(dependsOnMethods = {"update"})
+    public void delete() throws Exception
+    {
+        Transaction trans = (Transaction)this.repository.findOne(this.id);
+        this.repository.delete(trans);
+
+        Transaction deletedTrans = (Transaction)this.repository.findOne(this.id);
+        Assert.assertNull(deletedTrans);
+    }
 }

@@ -49,4 +49,24 @@ public class CarCrudTest extends AbstractTestNGSpringContextTests {
         Assert.assertEquals("Alpine White", car.getColour());
         Assert.assertEquals("BMW", car.getBrand());
     }
+
+    @Test(dependsOnMethods = {"read"})
+    public void update() throws Exception
+    {
+        Car car = (Car)this.repository.findOne(this.id);
+        Car newCar = new Car.Builder(car.getBrand()).copy(car).year("2016").build();
+        this.repository.save(newCar);
+
+        Car updatedCar = (Car)this.repository.findOne(this.id);
+        Assert.assertEquals("2016", updatedCar.getYear());
+    }
+
+    @Test(dependsOnMethods = {"update"})
+    public void delete() throws Exception
+    {
+        Car car = (Car)this.repository.findOne(this.id);
+        this.repository.delete(car);
+        Car deletedCar = (Car)this.repository.findOne(this.id);
+        Assert.assertNull(deletedCar);
+    }
 }

@@ -1,5 +1,6 @@
 package za.ac.cput.ermotorsports.repository;
 
+import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -62,5 +63,34 @@ public class ListOfPartsCrudTest extends AbstractTestNGSpringContextTests
 
         ListOfParts listOfParts = ListOfPartFactory.createListOfParts(bmw.getId(), engine.getId(), extra.getId());
         repository.save(listOfParts);
+        id = listOfParts.getList_id();
+    }
+
+    @Test(dependsOnMethods = {"create"})
+    public void read() throws Exception
+    {
+        ListOfParts list = (ListOfParts)this.repository.findOne(this.id);
+        Assert.assertNotNull(list);
+    }
+
+    @Test(dependsOnMethods = {"read"})
+    public void update() throws Exception
+    {
+        ListOfParts list = (ListOfParts)this.repository.findOne(this.id);
+        ListOfParts newList = new ListOfParts.Build(list.getCar_id()).copy(list).engineNo(1L).build();
+        this.repository.save(newList);
+
+        //ListOfParts updatedList = (ListOfParts)this.repository.findOne(this.id);
+        //Assert.assertEquals(1L, updatedList.getEngineNo());
+    }
+
+    @Test(dependsOnMethods = {"update"})
+    public void delete() throws Exception
+    {
+        ListOfParts list = (ListOfParts)this.repository.findOne(this.id);
+        this.repository.delete(list);
+
+        ListOfParts deletedList = (ListOfParts)this.repository.findOne(this.id);
+        Assert.assertNull(deletedList);
     }
 }
