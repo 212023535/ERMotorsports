@@ -65,5 +65,6 @@ public class EngineCrudTest extends AbstractTestNGSpringContextTests
         this.repository.delete(engine);
         Engine delEngine = (Engine)this.repository.findOne(this.id);
         Assert.assertNull(delEngine);
+
     }
 }

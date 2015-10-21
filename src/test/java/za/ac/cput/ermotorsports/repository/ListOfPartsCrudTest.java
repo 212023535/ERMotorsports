@@ -92,5 +92,6 @@ public class ListOfPartsCrudTest extends AbstractTestNGSpringContextTests
 
         ListOfParts deletedList = (ListOfParts)this.repository.findOne(this.id);
         Assert.assertNull(deletedList);
+
     }
 }

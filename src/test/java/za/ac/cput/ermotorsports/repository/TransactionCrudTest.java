@@ -59,5 +59,6 @@ public class TransactionCrudTest extends AbstractTestNGSpringContextTests
 
         Transaction deletedTrans = (Transaction)this.repository.findOne(this.id);
         Assert.assertNull(deletedTrans);
+
     }
 }

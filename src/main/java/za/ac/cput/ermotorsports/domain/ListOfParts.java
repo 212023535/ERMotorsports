@@ -72,8 +72,6 @@ public final class ListOfParts
     }
 
     //Getters
-
-
     public Long getList_id() {
         return list_id;
     }

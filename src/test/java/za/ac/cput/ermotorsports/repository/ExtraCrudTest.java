@@ -57,5 +57,6 @@ public class ExtraCrudTest extends AbstractTestNGSpringContextTests
 
         Extra deletedExtra = (Extra)this.repository.findOne(this.id);
         Assert.assertNull(deletedExtra);
+
     }
 }

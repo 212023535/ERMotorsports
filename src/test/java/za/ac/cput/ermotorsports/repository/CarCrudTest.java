@@ -68,5 +68,6 @@ public class CarCrudTest extends AbstractTestNGSpringContextTests {
         this.repository.delete(car);
         Car deletedCar = (Car)this.repository.findOne(this.id);
         Assert.assertNull(deletedCar);
+
     }
 }

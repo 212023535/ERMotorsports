@@ -65,5 +65,6 @@ public class CustomerCrudTest extends AbstractTestNGSpringContextTests
 
         Customer delCust = (Customer)this.repository.findOne(this.id);
         Assert.assertNull(delCust);
+
     }
 }
