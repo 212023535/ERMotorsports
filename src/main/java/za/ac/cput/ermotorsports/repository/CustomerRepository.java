@@ -8,4 +8,5 @@ import za.ac.cput.ermotorsports.domain.Customer;
  */
 public interface CustomerRepository extends CrudRepository<Customer, Long>
 {
+
 }
