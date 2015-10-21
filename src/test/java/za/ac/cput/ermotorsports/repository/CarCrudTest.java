@@ -37,7 +37,16 @@ public class CarCrudTest extends AbstractTestNGSpringContextTests {
         System.out.println(car);
 
         repository.save(car);
-        id = car.getId();
+        this.id = car.getId();
         Assert.assertNotNull(car);
+    }
+
+    @Test(dependsOnMethods = {"create"})
+    public void read() throws Exception
+    {
+        Car car = (Car)this.repository.findOne(this.id);
+        Assert.assertNotNull(car);
+        Assert.assertEquals("Alpine White", car.getColour());
+        Assert.assertEquals("BMW", car.getBrand());
     }
 }
