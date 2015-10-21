@@ -37,4 +37,34 @@ public class CustomerCrudTest extends AbstractTestNGSpringContextTests
         repository.save(customer);
         Assert.assertNotNull(customer.getId());
     }
+
+    @Test(dependsOnMethods = {"create"})
+    public void read() throws Exception
+    {
+        Customer cust = (Customer)this.repository.findOne(this.id);
+        Assert.assertNotNull(cust);
+        Assert.assertEquals("Chris", cust.getFname());
+    }
+
+    @Test(dependsOnMethods = {"read"})
+    public void update() throws Exception
+    {
+        Customer cust = (Customer)this.repository.findOne(this.id);
+        Customer newCust = new Customer.Build(cust.getFname()).copy(cust).address("89 Heath Street, Cape Town").build();
+        this.repository.save(newCust);
+
+        Customer updatedCust = (Customer)this.repository.findOne(this.id);
+        Assert.assertEquals("89 Heath Street, Cape Town", updatedCust.getAddress());
+    }
+
+    @Test(dependsOnMethods = {"update"})
+    public void delete() throws Exception
+    {
+        Customer cust = (Customer)this.repository.findOne(this.id);
+        this.repository.delete(cust);
+
+        Customer delCust = (Customer)this.repository.findOne(this.id);
+        Assert.assertNull(delCust);
+
+    }
 }

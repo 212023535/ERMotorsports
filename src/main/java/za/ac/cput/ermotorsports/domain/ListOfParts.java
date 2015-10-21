@@ -72,9 +72,11 @@ public final class ListOfParts
     }
 
     //Getters
-    public Long getList_id() {return list_id;}
+    public Long getList_id() {
+        return list_id;
+    }
 
-    public Long getId() {
+    public Long getCar_id() {
         return car_id;
     }
 
