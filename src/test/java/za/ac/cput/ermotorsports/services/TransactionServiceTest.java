@@ -24,7 +24,10 @@ public class TransactionServiceTest extends AbstractTestNGSpringContextTests
     @Autowired
     TransactionService service;
 
-    @Test
+    @Autowired
+    TransactionRepository repository;
+
+    /*@Test
     public void create() throws Exception
     {
 
@@ -81,5 +84,5 @@ public class TransactionServiceTest extends AbstractTestNGSpringContextTests
         service.delete(transaction);
         Transaction deletedTransaction = service.findById(id);
         Assert.assertNull(deletedTransaction);
-    }
+    }*/
 }

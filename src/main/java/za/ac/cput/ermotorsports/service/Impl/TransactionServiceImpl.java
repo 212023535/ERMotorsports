@@ -16,23 +16,7 @@ public class TransactionServiceImpl implements TransactionService
     @Autowired
     TransactionRepository repository;
 
-    public Transaction findById(Long ID) {
-        return repository.findOne(ID);
-    }
-
-    public Transaction save(Transaction entity) {
-        return repository.save(entity);
-    }
-
-    public Transaction update(Transaction entity) {
-        return repository.save(entity);
-    }
-
-    public void delete(Transaction entity) {
-        repository.delete(entity);
-    }
-
-    public List<Transaction> findAll() {
+    public List<Transaction> getTransactions() {
         List<Transaction> allTransactions = new ArrayList<Transaction>();
         Iterable<Transaction> transactions = repository.findAll();
         for(Transaction transaction:transactions)
