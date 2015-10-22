@@ -14,7 +14,7 @@ import java.util.List;
 public class TransactionServiceImpl implements TransactionService
 {
     @Autowired
-    TransactionRepository repository;
+    private TransactionRepository repository;
 
     public List<Transaction> getTransactions() {
         List<Transaction> allTransactions = new ArrayList<Transaction>();
