@@ -60,24 +60,20 @@ public class ListOfPartsServiceTest  extends AbstractTestNGSpringContextTests
         Assert.assertNotNull(id);
     }
 
-    /*@Test(dependsOnMethods = "read")
+    @Test(dependsOnMethods = "read")
     public void update() throws Exception
     {
-        Long car = null;
-        Long engine = null;
-        Long extra = 12345678910L;
-
         //Get list of parts
-        ListOfParts listOfParts = service.findById(id);
+        ListOfParts listOfParts = (ListOfParts)this.repository.findOne(this.id);
 
         //Change it
-        ListOfParts newListOfParts = new ListOfParts.Build(listOfParts.getList_id()).copy(listOfParts).partID(1234567888L).build();
+        ListOfParts newListOfParts = new ListOfParts.Build(listOfParts.getList_id()).copy(listOfParts).partID(2L).build();
 
         //Save it
-        service.update(newListOfParts);
+        this.repository.save(newListOfParts);
 
         //Get updated LOP
-        ListOfParts updatedListOfParts = service.findById(id);
+        ListOfParts updatedListOfParts = repository.findOne(this.id);
 
         Assert.assertNotNull(id);
     }
@@ -86,14 +82,12 @@ public class ListOfPartsServiceTest  extends AbstractTestNGSpringContextTests
     public void delete() throws Exception
     {
         //Get list of parts
-        ListOfParts listOfParts = service.findById(id);
+        ListOfParts listOfParts = repository.findOne(this.id);
+        this.repository.delete(listOfParts);
 
-        service.delete(listOfParts);
-
-        ListOfParts deletedLOP = service.findById(id);
-
+        ListOfParts deletedLOP = repository.findOne(id);
         Assert.assertNull(deletedLOP);
-    }*/
+    }
 
     @Test
     public void testGetListOfParts() throws Exception
