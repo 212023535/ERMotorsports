@@ -27,7 +27,7 @@ public class TransactionServiceTest extends AbstractTestNGSpringContextTests
     @Autowired
     TransactionRepository repository;
 
-    /*@Test
+    @Test
     public void create() throws Exception
     {
 
@@ -39,7 +39,7 @@ public class TransactionServiceTest extends AbstractTestNGSpringContextTests
         Transaction transaction = TransactionFactory.createTransaction(amount,car_id,cust_id);
 
         //Save in the database
-        service.save(transaction);
+        repository.save(transaction);
 
         //ID should be available
         id = transaction.getTransNo();
@@ -51,7 +51,7 @@ public class TransactionServiceTest extends AbstractTestNGSpringContextTests
     public void read() throws Exception
     {
         //Get transaction
-        Transaction transaction = service.findById(id);
+        Transaction transaction = (Transaction)this.repository.findOne(id);
         Assert.assertEquals("R10000",transaction.getAmount());
     }
 
@@ -62,16 +62,16 @@ public class TransactionServiceTest extends AbstractTestNGSpringContextTests
         Long cust_id = null;
 
         //Get transaction
-        Transaction transaction = service.findById(id);
+        Transaction transaction = repository.findOne(id);
 
         //Change it
         Transaction newTransaction = new Transaction.Build(transaction.getAmount()).copy(transaction).amount("R5000").build();
 
         //Save it
-        service.update(newTransaction);
+        this.repository.save(newTransaction);
 
         //Get updated transaction
-        Transaction updatedTransaction = service.findById(id);
+        Transaction updatedTransaction = repository.findOne(id);
 
         Assert.assertEquals("R5000",updatedTransaction.getAmount());
     }
@@ -80,9 +80,9 @@ public class TransactionServiceTest extends AbstractTestNGSpringContextTests
     public void delete() throws Exception
     {
         //Get transaction
-        Transaction transaction = service.findById(id);
-        service.delete(transaction);
-        Transaction deletedTransaction = service.findById(id);
+        Transaction transaction = repository.findOne(id);
+        this.repository.delete(transaction);
+        Transaction deletedTransaction = repository.findOne(id);
         Assert.assertNull(deletedTransaction);
-    }*/
+    }
 }
