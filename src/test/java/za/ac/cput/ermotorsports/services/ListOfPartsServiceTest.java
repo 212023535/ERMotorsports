@@ -75,7 +75,7 @@ public class ListOfPartsServiceTest  extends AbstractTestNGSpringContextTests
         //Get updated LOP
         ListOfParts updatedListOfParts = repository.findOne(this.id);
 
-        Assert.assertNotNull(id);
+        Assert.assertNotNull(updatedListOfParts);
     }
 
     @Test(dependsOnMethods = "update")
