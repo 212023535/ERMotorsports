@@ -7,7 +7,6 @@ import java.util.List;
 /**
  * Created by Edmund.Simons on 15/10/2015.
  */
-public interface TransactionService
+public interface TransactionService extends Services<Transaction, Long>
 {
-    List<Transaction> getTransactions();
 }

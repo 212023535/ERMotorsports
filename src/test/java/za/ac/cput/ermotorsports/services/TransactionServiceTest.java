@@ -24,9 +24,6 @@ public class TransactionServiceTest extends AbstractTestNGSpringContextTests
     @Autowired
     TransactionService service;
 
-    @Autowired
-    TransactionRepository repository;
-
     @Test
     public void create() throws Exception
     {
@@ -39,11 +36,10 @@ public class TransactionServiceTest extends AbstractTestNGSpringContextTests
         Transaction transaction = TransactionFactory.createTransaction(amount,car_id,cust_id);
 
         //Save in the database
-        repository.save(transaction);
+        service.save(transaction);
 
         //ID should be available
         id = transaction.getTransNo();
-
         Assert.assertNotNull(id);
     }
 
@@ -51,27 +47,27 @@ public class TransactionServiceTest extends AbstractTestNGSpringContextTests
     public void read() throws Exception
     {
         //Get transaction
-        Transaction transaction = (Transaction)this.repository.findOne(id);
+        Transaction transaction = service.findById(id);
         Assert.assertEquals("R10000",transaction.getAmount());
     }
 
     @Test(dependsOnMethods = "read")
     public void update() throws Exception
     {
-        Long car_id = null;
-        Long cust_id = null;
+        Long car_id = 1L;
+        Long cust_id = 1L;
 
         //Get transaction
-        Transaction transaction = repository.findOne(id);
+        Transaction transaction = service.findById(id);
 
         //Change it
         Transaction newTransaction = new Transaction.Build(transaction.getAmount()).copy(transaction).amount("R5000").build();
 
         //Save it
-        this.repository.save(newTransaction);
+        service.update(newTransaction);
 
         //Get updated transaction
-        Transaction updatedTransaction = repository.findOne(id);
+        Transaction updatedTransaction = service.findById(id);
 
         Assert.assertEquals("R5000",updatedTransaction.getAmount());
     }
@@ -80,9 +76,9 @@ public class TransactionServiceTest extends AbstractTestNGSpringContextTests
     public void delete() throws Exception
     {
         //Get transaction
-        Transaction transaction = repository.findOne(id);
-        this.repository.delete(transaction);
-        Transaction deletedTransaction = repository.findOne(id);
+        Transaction transaction = service.findById(id);
+        service.delete(transaction);
+        Transaction deletedTransaction = service.findById(id);
         Assert.assertNull(deletedTransaction);
     }
 }
