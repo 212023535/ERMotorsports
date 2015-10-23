@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Edmund.Simons on 15/10/2015.
  */
-public interface ListOfPartsService
+public interface ListOfPartsService  extends Services<ListOfParts, Long>
 {
-    List<ListOfParts> getListOfParts();
+
 }

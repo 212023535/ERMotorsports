@@ -29,10 +29,6 @@ public class ListOfPartsServiceTest  extends AbstractTestNGSpringContextTests
     @Autowired
     private ListOfPartsService service;
 
-    @Autowired
-    private ListOfPartsRepository repository;
-
-
     @Test
     public void create() throws Exception
     {
@@ -44,7 +40,7 @@ public class ListOfPartsServiceTest  extends AbstractTestNGSpringContextTests
         ListOfParts listOfParts = ListOfPartFactory.createListOfParts(car,engine,extra);
 
         //Save in the database
-        repository.save(listOfParts);
+        service.save(listOfParts);
 
         //ID should be available
         id = listOfParts.getList_id();
@@ -56,7 +52,7 @@ public class ListOfPartsServiceTest  extends AbstractTestNGSpringContextTests
     public void read() throws Exception
     {
         //Get list of parts
-        ListOfParts listOfParts = (ListOfParts)this.repository.findOne(id);
+        ListOfParts listOfParts = service.findById(id);
         Assert.assertNotNull(id);
     }
 
@@ -64,16 +60,16 @@ public class ListOfPartsServiceTest  extends AbstractTestNGSpringContextTests
     public void update() throws Exception
     {
         //Get list of parts
-        ListOfParts listOfParts = (ListOfParts)this.repository.findOne(this.id);
+        ListOfParts listOfParts = service.findById(id);
 
         //Change it
         ListOfParts newListOfParts = new ListOfParts.Build(listOfParts.getList_id()).copy(listOfParts).partID(2L).build();
 
         //Save it
-        this.repository.save(newListOfParts);
+        service.save(newListOfParts);
 
         //Get updated LOP
-        ListOfParts updatedListOfParts = repository.findOne(this.id);
+        ListOfParts updatedListOfParts = service.findById(id);
 
         Assert.assertNotNull(updatedListOfParts);
     }
@@ -82,17 +78,17 @@ public class ListOfPartsServiceTest  extends AbstractTestNGSpringContextTests
     public void delete() throws Exception
     {
         //Get list of parts
-        ListOfParts listOfParts = repository.findOne(this.id);
-        this.repository.delete(listOfParts);
+        ListOfParts listOfParts = service.findById(id);
+        service.delete(listOfParts);
 
-        ListOfParts deletedLOP = repository.findOne(id);
+        ListOfParts deletedLOP = service.findById(id);
         Assert.assertNull(deletedLOP);
     }
 
     @Test
     public void testGetListOfParts() throws Exception
     {
-        List<ListOfParts> myList = service.getListOfParts();
+        List<ListOfParts> myList = service.findAll();
         Assert.assertTrue(myList.size() >= 0);
     }
 }

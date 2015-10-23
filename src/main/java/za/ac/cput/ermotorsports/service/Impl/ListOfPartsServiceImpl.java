@@ -18,7 +18,27 @@ public class ListOfPartsServiceImpl implements ListOfPartsService
     @Autowired
     private ListOfPartsRepository repository;
 
-    public List<ListOfParts> getListOfParts()
+    @Override
+    public ListOfParts findById(Long id) {
+        return repository.findOne(id);
+    }
+
+    @Override
+    public ListOfParts save(ListOfParts entity) {
+        return repository.save(entity);
+    }
+
+    @Override
+    public ListOfParts update(ListOfParts entity) {
+        return repository.save(entity);
+    }
+
+    @Override
+    public void delete(ListOfParts entity) {
+        repository.delete(entity);
+    }
+
+    public List<ListOfParts> findAll()
     {
         List<ListOfParts> allParts = new ArrayList<ListOfParts>();
         Iterable<ListOfParts> list = repository.findAll();
