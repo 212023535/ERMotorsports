@@ -44,15 +44,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TransactionPage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/api/TransactionPage.java">
+      <file leaf-file-name="CustomerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/domain/CustomerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3323263">
-              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="57" selection-start-line="24" selection-start-column="7" selection-end-line="31" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerServiceTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/services/CustomerServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#846#847#0" expanded="true" />
-                <element signature="e#886#887#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,11 +69,22 @@
       <file leaf-file-name="ListOfPartsPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/api/ListOfPartsPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6896553">
-              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerPage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/api/CustomerPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.85238785">
+              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding>
-                <element signature="e#1099#1100#0" expanded="true" />
-                <element signature="e#1139#1140#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#824#825#0" expanded="true" />
+                <element signature="e#864#865#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,10 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/service/CarService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/service/Impl/CarServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/conf/factory/SubjectFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/repository/SubjectRepository.java" />
         <option value="$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/domain/SubjectTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/domain/Subject.java" />
@@ -140,6 +155,10 @@
         <option value="$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/services/ListOfPartsServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/api/ListOfPartsPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/api/TransactionPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/service/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/service/Impl/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/services/CustomerServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/api/CustomerPage.java" />
       </list>
     </option>
   </component>
@@ -191,6 +210,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -365,14 +386,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Impl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -386,6 +409,7 @@
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -758,12 +782,47 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="scalaCoverage" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="scalaCoverage" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -815,6 +874,22 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="scalaCoverage" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="TestNG.ListOfPartsCrudTest" />
       <item index="1" class="java.lang.String" itemvalue="TestNG.TransactionCrudTest" />
@@ -858,12 +933,13 @@
       <workItem from="1445498608408" duration="1381000" />
       <workItem from="1445586581149" duration="2357000" />
       <workItem from="1445592354371" duration="240000" />
-      <workItem from="1445592862707" duration="3478000" />
+      <workItem from="1445592862707" duration="5717000" />
+      <workItem from="1445856940356" duration="1588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41549000" />
+    <option name="totallyTimeSpent" value="45376000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -945,41 +1021,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/service/Impl/TransactionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/repository/CarCrudTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/domain/ListOfParts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="22" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/conf/factory/ListOfPartFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="80" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/repository/CarCrudTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/domain/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1040,13 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="99" column="13" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/conf/factory/CustomerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -1124,13 +1158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27567568">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/domain/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1243,7 +1270,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1251,6 +1277,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="71" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/service/Impl/TransactionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/api/TransactionPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="42" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/service/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1263,18 +1314,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/service/Impl/TransactionServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/service/Impl/ListOfPartsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+          <caret line="42" column="66" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/service/Impl/CustomerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#591#592#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#1007#1017#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/domain/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55716354">
+          <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+          <folding>
+            <element signature="e#2414#2415#0" expanded="true" />
+            <element signature="e#2450#2451#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/conf/factory/CustomerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2952243">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/services/TransactionServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/domain/CustomerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+          <caret line="31" column="57" selection-start-line="24" selection-start-column="7" selection-end-line="31" selection-end-column="57" />
           <folding />
         </state>
       </provider>
@@ -1282,15 +1373,23 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/services/ListOfPartsServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="52" selection-start-line="90" selection-start-column="52" selection-end-line="90" selection-end-column="52" />
+          <caret line="91" column="46" selection-start-line="91" selection-start-column="46" selection-end-line="91" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/service/Impl/ListOfPartsServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/services/TransactionServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8031838">
+          <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/za/ac/cput/ermotorsports/services/CustomerServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1299,23 +1398,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/api/ListOfPartsPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6896553">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="39" />
-          <folding>
-            <element signature="e#1099#1100#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/api/TransactionPage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/za/ac/cput/ermotorsports/api/CustomerPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3323263">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.85238785">
+          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
           </folding>
         </state>
       </provider>
