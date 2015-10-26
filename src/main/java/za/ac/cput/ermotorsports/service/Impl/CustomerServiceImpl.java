@@ -1,6 +1,7 @@
 package za.ac.cput.ermotorsports.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import za.ac.cput.ermotorsports.domain.Customer;
 import za.ac.cput.ermotorsports.repository.CustomerRepository;
 import za.ac.cput.ermotorsports.service.CustomerService;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * Created by Rudi.Zeeman on 26.10.15.
  */
+@Service
 public class CustomerServiceImpl implements CustomerService
 {
 

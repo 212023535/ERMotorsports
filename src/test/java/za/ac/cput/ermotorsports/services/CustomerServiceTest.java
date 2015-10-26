@@ -84,7 +84,7 @@ public class CustomerServiceTest extends AbstractTestNGSpringContextTests
 
         Customer deletedCust = service.findById(id);
 
-        Assert.assertNotNull(deletedCust);
+        Assert.assertNull(deletedCust);
     }
 
 
