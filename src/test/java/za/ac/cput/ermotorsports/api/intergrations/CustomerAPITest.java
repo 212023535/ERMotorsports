@@ -69,18 +69,23 @@ public class CustomerAPITest
     private static void updateCustomer()
     {
         System.out.println("Testing updateCustomers API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Customer customer = new Customer.Build("Edmund").lname("Simons").number("0727693948").address("15 Dunker Melkbosstrand").build();
+        restTemplate.put(REST_SERVICE_URI + "/customer/update/1", customer);
+        System.out.println(customer);
     }
 
     private static void deleteCustomer()
     {
         System.out.println("Testing deleteCustomers API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(REST_SERVICE_URI + "/customer/delete/3");
     }
 
     private static void deleteAllCustomer()
     {
         System.out.println("Testing deleteAllCustomers API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(REST_SERVICE_URI + "/customer/");
     }
 }

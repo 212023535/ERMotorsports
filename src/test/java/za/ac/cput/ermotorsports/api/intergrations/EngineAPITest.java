@@ -69,18 +69,23 @@ public class EngineAPITest
     private static void updateEngine()
     {
         System.out.println("Testing updateEngine API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Engine engine = new Engine.Build("BMW").cubicCapacity("3.5").units("12").cylinders("6").price("R45000").model("S64 V6").build();
+        restTemplate.put(REST_SERVICE_URI + "/engine/update/1", engine);
+        System.out.println(engine);
     }
 
     private static void deleteEngine()
     {
         System.out.println("Testing deleteEngine API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(REST_SERVICE_URI + "/engine/delete/3");
     }
 
     private static void deleteAllEngine()
     {
         System.out.println("Testing deleteAllEngine API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(REST_SERVICE_URI + "/engine/");
     }
 }

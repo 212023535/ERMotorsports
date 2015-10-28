@@ -70,20 +70,22 @@ public class CarAPITest
     {
         System.out.println("Testing updateCar API-------------");
         RestTemplate restTemplate = new RestTemplate();
-
+        Car car = new Car.Builder("Mercedes Benz").model("S Class").year("2013").colour("Black").build();
+        restTemplate.put(REST_SERVICE_URI + "/car/update/1", car);
+        System.out.println(car);
     }
 
     private static void deleteCar()
     {
         System.out.println("Testing deleteCar API-------------");
         RestTemplate restTemplate = new RestTemplate();
-
+        restTemplate.delete(REST_SERVICE_URI + "/car/delete/3");
     }
 
     private static void deleteAllCars()
     {
         System.out.println("Testing deleteAllCars API-------------");
         RestTemplate restTemplate = new RestTemplate();
-
+        restTemplate.delete(REST_SERVICE_URI + "/car/");
     }
 }
