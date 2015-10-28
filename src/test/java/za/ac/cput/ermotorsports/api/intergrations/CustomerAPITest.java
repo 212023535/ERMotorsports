@@ -2,7 +2,9 @@ package za.ac.cput.ermotorsports.api.intergrations;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import za.ac.cput.ermotorsports.domain.Customer;
 
+import java.net.URI;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -50,13 +52,18 @@ public class CustomerAPITest
     private static void getCustomer()
     {
         System.out.println("Testing getCustomers API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Customer customer = restTemplate.getForObject(REST_SERVICE_URI + "/customer/1", Customer.class);
+        System.out.println(customer);
     }
 
     private static void createCustomer()
     {
         System.out.println("Testing createCustomers API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Customer customer = new Customer.Build("Edmund").lname("Simons").number("0727693948").address("15 Dunker Melkbosstrand").build();
+        URI uri = restTemplate.postForLocation(REST_SERVICE_URI + "/customer/create/", customer, Customer.class);
+        System.out.println("Location : "+uri.toASCIIString());
     }
 
     private static void updateCustomer()

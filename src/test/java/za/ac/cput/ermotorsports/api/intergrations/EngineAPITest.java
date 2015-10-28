@@ -2,7 +2,9 @@ package za.ac.cput.ermotorsports.api.intergrations;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import za.ac.cput.ermotorsports.domain.Engine;
 
+import java.net.URI;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -50,13 +52,18 @@ public class EngineAPITest
     private static void getEngine()
     {
         System.out.println("Testing getEngine API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Engine engine = restTemplate.getForObject(REST_SERVICE_URI + "/engine/1", Engine.class);
+        System.out.println(engine);
     }
 
     private static void createEngine()
     {
         System.out.println("Testing createEngine API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Engine engine = new Engine.Build("BMW").cubicCapacity("3.5").units("12").cylinders("6").price("R45000").model("S64 V6").build();
+        URI uri = restTemplate.postForLocation(REST_SERVICE_URI + "/engine/create/", engine, Engine.class);
+        System.out.println("Location : "+uri.toASCIIString());
     }
 
     private static void updateEngine()
