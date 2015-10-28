@@ -2,7 +2,9 @@ package za.ac.cput.ermotorsports.api.intergrations;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import za.ac.cput.ermotorsports.domain.Extra;
 
+import java.net.URI;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -50,13 +52,18 @@ public class ExtraAPITest
     private static void getExtra()
     {
         System.out.println("Testing getExtra API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Extra extra = restTemplate.getForObject(REST_SERVICE_URI + "/extra/1", Extra.class);
+        System.out.println(extra);
     }
 
     private static void createExtra()
     {
         System.out.println("Testing createExtra API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Extra extra = new Extra.Build("Simota").price("R220").units("45").description("Air filter").build();
+        URI uri = restTemplate.postForLocation(REST_SERVICE_URI + "/extra/create/", extra, Extra.class);
+        System.out.println("Location : "+uri.toASCIIString());
     }
 
     private static void updateExtra()

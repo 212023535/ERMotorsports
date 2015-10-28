@@ -2,7 +2,9 @@ package za.ac.cput.ermotorsports.api.intergrations;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import za.ac.cput.ermotorsports.domain.Transaction;
 
+import java.net.URI;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -50,13 +52,18 @@ public class TransactionAPITest
     private static void getTransaction()
     {
         System.out.println("Testing getTransaction API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Transaction transaction = restTemplate.getForObject(REST_SERVICE_URI + "/transaction/1", Transaction.class);
+        System.out.println(transaction);
     }
 
     private static void createTransaction()
     {
         System.out.println("Testing createTransaction API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Transaction transaction = new Transaction.Build("R5000").car(1L).customer(1L).build();
+        URI uri = restTemplate.postForLocation(REST_SERVICE_URI + "/transaction/create/", transaction, Transaction.class);
+        System.out.println("Location : "+uri.toASCIIString());
     }
 
     private static void updateTransaction()

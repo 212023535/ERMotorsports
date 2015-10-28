@@ -16,7 +16,7 @@ import java.util.List;
  * Created by Rudi.Zeeman on 26.10.15.
  */
 @RestController
-@RequestMapping(value="/Car/**")
+@RequestMapping(value="/car/**")
 public class CarPage
 {
     @Autowired
@@ -29,7 +29,7 @@ public class CarPage
     }
 
     //-------------------Retrieve Single Car--------------------------------------------------------
-    @RequestMapping(value = "/Car/{id}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/car/{id}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Car> getCar(@PathVariable("id") long id)
     {
         System.out.println("Fetching Car with id " + id);
@@ -46,7 +46,7 @@ public class CarPage
 
     //-------------------Retrieve All Car--------------------------------------------------------
 
-    @RequestMapping(value = "/Car/", method = RequestMethod.GET)
+    @RequestMapping(value = "/cars/", method = RequestMethod.GET)
     public ResponseEntity<List<Car>> listAllCars() {
         List<Car> carList = service.findAll();
         if(carList.isEmpty()){
@@ -58,20 +58,20 @@ public class CarPage
 
     //-------------------Create a Car--------------------------------------------------------
 
-    @RequestMapping(value = "/Car/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/car/create", method = RequestMethod.POST)
     public ResponseEntity<Void> createCar(@RequestBody Car Car,    UriComponentsBuilder ucBuilder) {
         System.out.println("Creating List " + Car.getId());
 
         service.save(Car);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/Car/{id}").buildAndExpand(Car.getId()).toUri());
+        headers.setLocation(ucBuilder.path("/car/{id}").buildAndExpand(Car.getId()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 
     //------------------- Update a Car --------------------------------------------------------
 
-    @RequestMapping(value = "/Car/update/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/car/update/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Car> updateCar(@PathVariable("id") long id, @RequestBody Car Car) {
         System.out.println("Updating Car " + id);
 
@@ -92,7 +92,7 @@ public class CarPage
 
     //------------------- Delete a Car --------------------------------------------------------
 
-    @RequestMapping(value = "/Car/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/car/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Car> deleteCar(@PathVariable("id") long id) {
         System.out.println("Fetching & Deleting Car with id " + id);
 

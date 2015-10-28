@@ -2,7 +2,9 @@ package za.ac.cput.ermotorsports.api.intergrations;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import za.ac.cput.ermotorsports.domain.Car;
 
+import java.net.URI;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -50,30 +52,38 @@ public class CarAPITest
     private static void getCar()
     {
         System.out.println("Testing getCar API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Car car = restTemplate.getForObject(REST_SERVICE_URI + "/car/1", Car.class);
+        System.out.println(car);
     }
 
     private static void createCar()
     {
         System.out.println("Testing createCar API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Car car = new Car.Builder("Mercedes Benz").model("S Class").year("2013").colour("Black").build();
+        URI uri = restTemplate.postForLocation(REST_SERVICE_URI + "/car/create/", car, Car.class);
+        System.out.println("Location : "+uri.toASCIIString());
     }
 
     private static void updateCar()
     {
         System.out.println("Testing updateCar API-------------");
+        RestTemplate restTemplate = new RestTemplate();
 
     }
 
     private static void deleteCar()
     {
         System.out.println("Testing deleteCar API-------------");
+        RestTemplate restTemplate = new RestTemplate();
 
     }
 
     private static void deleteAllCars()
     {
         System.out.println("Testing deleteAllCars API-------------");
+        RestTemplate restTemplate = new RestTemplate();
 
     }
 }
