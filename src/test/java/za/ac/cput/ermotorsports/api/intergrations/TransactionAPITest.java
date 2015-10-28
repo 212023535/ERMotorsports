@@ -69,18 +69,23 @@ public class TransactionAPITest
     private static void updateTransaction()
     {
         System.out.println("Testing updateTransaction API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Transaction transaction = new Transaction.Build("R5000").car(1L).customer(1L).build();
+        restTemplate.put(REST_SERVICE_URI + "/transaction/update/1", transaction);
+        System.out.println(transaction);
     }
 
     private static void deleteTransaction()
     {
         System.out.println("Testing deleteTransaction API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(REST_SERVICE_URI + "/transaction/delete/3");
     }
 
     private static void deleteAllTransaction()
     {
         System.out.println("Testing deleteAllTransaction API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(REST_SERVICE_URI + "/transaction/");
     }
 }

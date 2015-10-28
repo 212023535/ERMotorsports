@@ -69,18 +69,23 @@ public class ExtraAPITest
     private static void updateExtra()
     {
         System.out.println("Testing updateExtra API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        Extra extra = new Extra.Build("Simota").price("R220").units("45").description("Air filter").build();
+        restTemplate.put(REST_SERVICE_URI + "/extra/update/1", extra);
+        System.out.println(extra);
     }
 
     private static void deleteExtra()
     {
-        System.out.println("Testing deleteExtra API-------------");
-
+        System.out .println("Testing deleteExtra API-------------");
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(REST_SERVICE_URI + "/extra/delete/3");
     }
 
     private static void deleteAllExtra()
     {
         System.out.println("Testing deleteAllExtra API-------------");
-
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(REST_SERVICE_URI + "/extra/");
     }
 }
